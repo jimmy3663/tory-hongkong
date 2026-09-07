@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>홍콩 3일 · 셩완 출발</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1E22;
+    --surface:#14282D;
+    --surface-2:#1B343A;
+    --line:#26454C;
+    --text:#F0EAE0;
+    --muted:#8FA5A8;
+    --jade:#4FE0B0;
+    --neon:#FF6B9D;
+    --island:#007DC5;
+    --tsuenwan:#E60012;
+    --ferry:#1E9B54;
+    --tram:#E8A33D;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Noto Sans KR',system-ui,sans-serif;
+    font-weight:300;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:560px;margin:0 auto;padding:0 20px 64px}
+
+  /* ---- hero ---- */
+  header{padding:56px 0 40px;text-align:center}
+  .neon{
+    font-family:'Gowun Batang',serif;
+    font-weight:700;
+    font-size:clamp(38px,11vw,54px);
+    line-height:1.1;
+    letter-spacing:.02em;
+    color:#FFF6FA;
+    text-shadow:
+      0 0 4px rgba(255,107,157,.9),
+      0 0 14px rgba(255,107,157,.65),
+      0 0 34px rgba(255,107,157,.35);
+    margin:0;
+  }
+  .hero-sub{
+    margin:18px 0 0;
+    color:var(--muted);
+    font-size:14px;
+    letter-spacing:.03em;
+  }
+  .hero-sub b{color:var(--jade);font-weight:500}
+
+  /* ---- day ---- */
+  .day{margin-top:44px}
+  .day-head{
+    display:flex;align-items:baseline;gap:12px;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--line);
+  }
+  .day-num{
+    font-family:'Gowun Batang',serif;
+    font-size:30px;font-weight:700;
+    color:var(--jade);
+    line-height:1;
+  }
+  .day-title{
+    font-family:'Gowun Batang',serif;
+    font-size:20px;font-weight:700;
+    margin:0;flex:1;
+  }
+  .day-date{font-size:12.5px;color:var(--muted)}
+
+  /* ---- timeline ---- */
+  ol.tl{list-style:none;margin:0;padding:0}
+  ol.tl>li{position:relative;padding:0 0 0 60px}
+  .time{
+    position:absolute;left:0;top:20px;
+    width:46px;text-align:right;
+    font-size:12.5px;font-variant-numeric:tabular-nums;
+    color:var(--jade);font-weight:500;
+  }
+  .stop{
+    background:var(--surface);
+    border-radius:14px;
+    padding:16px 18px;
+    margin-top:14px;
+    border:1px solid var(--line);
+  }
+  .stop h3{
+    margin:0;font-size:16.5px;font-weight:500;
+    font-family:'Noto Sans KR',sans-serif;
+  }
+  .stop .meta{
+    margin-top:3px;font-size:12px;color:var(--muted);
+  }
+  .stop p{margin:9px 0 0;font-size:13.5px;color:#CFDCDD}
+  .warn{
+    margin-top:10px;padding:9px 11px;
+    background:rgba(255,107,157,.1);
+    border-left:2px solid var(--neon);
+    border-radius:0 6px 6px 0;
+    font-size:12.5px;color:#FFC7DB;
+  }
+
+  /* ---- transit leg (the connector carries the info) ---- */
+  .leg{
+    position:relative;
+    margin:0;padding:14px 0 14px 4px;
+    font-size:12.5px;color:var(--muted);
+  }
+  .leg::before{
+    content:"";position:absolute;left:-38px;top:0;bottom:0;
+    width:2px;background:var(--line);
+  }
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:3px 10px;border-radius:999px;
+    font-size:11.5px;font-weight:500;color:#fff;
+    margin-right:7px;vertical-align:middle;
+  }
+  .c-walk{background:transparent;border:1px solid var(--line);color:var(--muted)}
+  .c-island{background:var(--island)}
+  .c-tsuenwan{background:var(--tsuenwan)}
+  .c-ferry{background:var(--ferry)}
+  .c-tram{background:var(--tram);color:#3A2600}
+  .c-bus{background:#7A5CC4}
+  .c-aex{background:#00888A}
+
+  /* ---- info block ---- */
+  .card{
+    background:var(--surface-2);
+    border-radius:14px;padding:20px;margin-top:20px;
+    border:1px solid var(--line);
+  }
+  .card h4{
+    margin:0 0 12px;font-size:15px;font-weight:500;
+    font-family:'Gowun Batang',serif;color:var(--jade);
+  }
+  .card ul{margin:0;padding-left:17px}
+  .card li{font-size:13.5px;margin-bottom:8px;color:#CFDCDD}
+  .card li:last-child{margin-bottom:0}
+  .card li b{color:var(--text);font-weight:500}
+
+  footer{
+    margin-top:52px;padding-top:22px;
+    border-top:1px solid var(--line);
+    font-size:12px;color:var(--muted);text-align:center;line-height:1.9;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    header{animation:rise .7s ease-out both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1 class="neon">홍콩 3일</h1>
+  <p class="hero-sub">숙소 <b>셩완 저보이스가</b> 기준 · 월 오후 도착 → 목 정오 출발</p>
+</header>
+
+<div class="card">
+  <h4>출발 전에 챙길 것</h4>
+  <ul>
+    <li><b>옥토퍼스 카드</b> — MTR·버스·트램·스타페리 전부 이걸로. 공항 도착층에서 바로 살 수 있어요. 애플페이 옥토퍼스도 가능.</li>
+    <li><b>현금 조금</b> — 제니베이커리, 재래시장, 노포는 카드가 안 되는 곳이 많아요.</li>
+    <li><b>가장 가까운 역은 셩완역(Sheung Wan)</b>, 파란색 아일랜드선. 숙소에서 도보 5분쯤이에요.</li>
+  </ul>
+</div>
+
+<!-- ================= DAY 1 ================= -->
+<section class="day">
+  <div class="day-head">
+    <span class="day-num">1</span>
+    <h2 class="day-title">센트럴 &amp; 소호</h2>
+    <span class="day-date">월요일</span>
+  </div>
+
+  <ol class="tl">
+    <li>
+      <span class="time">15:00</span>
+      <div class="stop">
+        <h3>홍콩국제공항 도착</h3>
+        <div class="meta">입국 심사 + 짐 찾기 40분쯤</div>
+      </div>
+      <div class="leg">
+        <span class="chip c-bus">A11 버스</span>약 60분 · HK$42<br>
+        캐리어가 있으니 버스를 추천해요. 공항 도착층 버스 정류장에서 A11을 타고 <b>셩완(Sheung Wan)</b>에서 내리면 숙소 근처예요. 2층 앞자리에 앉으면 칭마대교 뷰가 좋아요.<br><br>
+        <span class="chip c-aex">공항철도</span>대안 · 24분 · HK$115<br>
+        더 빠른 걸 원하면 공항철도로 홍콩역까지 간 뒤 택시 5분.
+      </div>
+    </li>
+
+    <li>
+      <span class="time">16:00</span>
+      <div class="stop">
+        <h3>숙소 체크인</h3>
+        <p>짐 내려놓고 가볍게 나오기. 오늘은 다 걸어서 다닐 수 있는 코스예요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 6분</span>할리우드로드 방향으로 동쪽</div>
+    </li>
+
+    <li>
+      <span class="time">16:30</span>
+      <div class="stop">
+        <h3>GALET ANTIQUE</h3>
+        <div class="meta">빈티지 소품샵 · 4.6 · ~19:00</div>
+        <p>유럽 앤티크 그릇과 조명이 가득한 작은 가게. 주인이 음악 취향도 좋다고 소문난 곳이에요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 15분</span>할리우드로드를 따라 쭉 동쪽으로. 가는 길 자체가 벽화랑 골동품 가게 구경거리예요.</div>
+    </li>
+
+    <li>
+      <span class="time">17:15</span>
+      <div class="stop">
+        <h3>Dram Good Whisky Shop</h3>
+        <div class="meta">위스키 전문점 · 5.0 · ~19:00</div>
+        <p>린드허스트 테라스 건물 15층. 입구가 좀 숨어 있으니 엘리베이터를 타고 올라가면 돼요. 시음할 수 있는 병을 여러 개 열어둡니다.</p>
+        <div class="warn">19시에 문 닫아요. 늦어지면 3일차 헝유엔으로 미뤄도 괜찮아요.</div>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 5분</span>바로 옆이 미드레벨 에스컬레이터 입구예요.</div>
+    </li>
+
+    <li>
+      <span class="time">18:00</span>
+      <div class="stop">
+        <h3>미드레벨 에스컬레이터</h3>
+        <div class="meta">관광 · 4.1 · 06:00~24:00</div>
+        <p>세계에서 가장 긴 야외 에스컬레이터. 오전 10시 이후로는 계속 올라가는 방향이에요. 타고 올라가다가 마음에 드는 골목에서 내리면 거기가 소호예요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 2분</span>스탠턴가에서 내리면 바로</div>
+    </li>
+
+    <li>
+      <span class="time">18:30</span>
+      <div class="stop">
+        <h3>Fiata Pizza</h3>
+        <div class="meta">나폴리 피자 · 4.3 · 18:00~21:30</div>
+        <p>미쉐린 빕구르망에 오른 화덕 피자집. 자리가 몇 개 없어서 6시 오픈에 맞춰 가는 게 안전해요. 디아볼라가 대표 메뉴.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 1분</span>같은 거리 끝</div>
+    </li>
+
+    <li>
+      <span class="time">20:00</span>
+      <div class="stop">
+        <h3>Vission Bakery</h3>
+        <div class="meta">베이커리 · 4.4 · ~21:00</div>
+        <p>말차 모찌 데니시가 시그니처. 사서 2시간 안에 먹으라고 안내해주는 집이라 그 자리에서 하나 먹고 가는 게 좋아요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 15분</span>내리막이라 걸어가도 편하고, 피곤하면 택시로 HK$30 정도예요.</div>
+    </li>
+
+    <li>
+      <span class="time">20:40</span>
+      <div class="stop"><h3>숙소</h3></div>
+    </li>
+  </ol>
+</section>
+
+<!-- ================= DAY 2 ================= -->
+<section class="day">
+  <div class="day-head">
+    <span class="day-num">2</span>
+    <h2 class="day-title">몽콕에서 침사추이까지</h2>
+    <span class="day-date">화요일</span>
+  </div>
+
+  <ol class="tl">
+    <li>
+      <span class="time">10:30</span>
+      <div class="stop">
+        <h3>숙소 출발</h3>
+        <p>가장 북쪽 금붕어 거리에서 시작해 하루 종일 남쪽으로 내려오는 코스예요.</p>
+      </div>
+      <div class="leg">
+        <span class="chip c-walk">도보 5분</span>셩완역까지<br><br>
+        <span class="chip c-island">아일랜드선</span>센트럴역까지 1정거장<br>
+        <span class="chip c-tsuenwan">췬완선</span>센트럴역에서 갈아타고 프린스에드워드역까지 6정거장<br><br>
+        전체 25분 · HK$12 · <b>B2 출구</b>로 나오세요.
+      </div>
+    </li>
+
+    <li>
+      <span class="time">11:00</span>
+      <div class="stop">
+        <h3>금붕어 거리</h3>
+        <div class="meta">관광 · 4.0 · 11:00~21:45</div>
+        <p>비닐봉지에 담긴 물고기가 가게 앞에 줄줄이 걸려 있는 거리. 촬영 금지 스티커가 붙은 가게가 많으니 사진은 조심해서 찍는 게 좋아요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 10분</span>퉁초이가를 따라 남쪽으로. 그대로 걸으면 레이디스마켓이 이어져요.</div>
+    </li>
+
+    <li>
+      <span class="time">12:00</span>
+      <div class="stop">
+        <h3>레이디스마켓</h3>
+        <div class="meta">시장 · 3.9 · 11:00~23:30</div>
+        <p>기념품, 가방, 자잘한 소품 위주. 정가가 없으니 흥정은 기본이에요. 전자제품은 안 사는 게 좋습니다.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 5분</span>파윤가 방향</div>
+    </li>
+
+    <li>
+      <span class="time">13:30</span>
+      <div class="stop">
+        <h3>Gommone Whisky Shop</h3>
+        <div class="meta">위스키 전문점 · 4.9 · 13:30 오픈</div>
+        <p>상가 건물 1층 안쪽에 있어서 조금 찾기 어려워요. 스코틀랜드·아일랜드·일본 위스키를 직접 소싱해서 들여오는 집입니다.</p>
+      </div>
+      <div class="leg">
+        <span class="chip c-tsuenwan">췬완선</span>몽콕역 → 야마테이역 1정거장<br>
+        <span class="chip c-walk">또는 도보 15분</span>상하이가 방향으로 남쪽
+      </div>
+    </li>
+
+    <li>
+      <span class="time">15:00</span>
+      <div class="stop">
+        <h3>Fully Tableware</h3>
+        <div class="meta">그릇·주방용품 · 4.3 · ~18:30</div>
+        <p>상하이가 주방용품 거리에 있는 가게. 홍콩식 흑백 밀크티 컵을 다른 데보다 싸게 살 수 있어서 유명해요. 한 세트 HK$55 정도.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 12분</span>둔다스가 방향으로 북동쪽. 몽콕역 근처예요.</div>
+    </li>
+
+    <li>
+      <span class="time">17:00</span>
+      <div class="stop">
+        <h3>Beauty in the Pot</h3>
+        <div class="meta">훠궈 · 4.9 · 17:00 오픈</div>
+        <p>콜라겐 육수와 마라를 반반으로 시키는 게 정석. 소스 코너에서 직접 조합할 수 있고, 디저트까지 나오는 세트가 있어요.</p>
+        <div class="warn">오픈런으로 17시 정각에 들어가세요. 다음 일정인 제니베이커리가 19시에 닫혀서, 18:15쯤엔 나와야 여유가 있어요.</div>
+      </div>
+      <div class="leg">
+        <span class="chip c-tsuenwan">췬완선</span>몽콕역 → 침사추이역 4정거장 · 10분<br>
+        나단로드 쪽 출구로 나오면 바로 앞이에요.
+      </div>
+    </li>
+
+    <li>
+      <span class="time">18:40</span>
+      <div class="stop">
+        <h3>제니베이커리</h3>
+        <div class="meta">버터쿠키 · ~19:00 · 현금만</div>
+        <p>미라도 맨션 2층 계단으로 올라가면 있어요. 줄이 길어 보여도 10분이면 빠집니다. 뭘 살지 미리 정해두면 좋아요.</p>
+        <div class="warn">시간이 빠듯하면 여기를 먼저 들르고 훠궈를 나중에 먹어도 돼요. 훠궈는 새벽 2시까지 열려 있으니까요.</div>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 6분</span>카나본로드 방향</div>
+    </li>
+
+    <li>
+      <span class="time">19:20</span>
+      <div class="stop">
+        <h3>Hashtag B</h3>
+        <div class="meta">에그타르트 · 4.6 · ~22:00</div>
+        <p>나폴레옹 타르트와 시그니처 에그타르트가 대표. 안에 앉을 자리는 없어서 사서 나와 걸으며 먹는 집이에요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 10분</span>바닷가 쪽으로 내려가면 프롬나드가 나와요.</div>
+    </li>
+
+    <li>
+      <span class="time">19:50</span>
+      <div class="stop">
+        <h3>스타의 거리</h3>
+        <div class="meta">야경 · 하버뷰 프롬나드</div>
+        <p>매일 저녁 <b>8시 정각</b>에 심포니 오브 라이트 조명쇼가 시작해요. 10분 전에 자리를 잡으면 좋습니다.</p>
+      </div>
+      <div class="leg">
+        <span class="chip c-ferry">스타페리</span>침사추이 → 센트럴 · 8분 · HK$5<br>
+        배 위에서 보는 야경이 제일 예뻐요. 23시까지 운항합니다. 내려서 숙소까지는 도보 20분 또는 택시 5분.
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ================= DAY 3 ================= -->
+<section class="day">
+  <div class="day-head">
+    <span class="day-num">3</span>
+    <h2 class="day-title">셩완 쇼핑과 마지막 밤</h2>
+    <span class="day-date">수요일</span>
+  </div>
+
+  <ol class="tl">
+    <li>
+      <span class="time">08:30</span>
+      <div class="stop">
+        <h3>Kwan Lok Restaurant</h3>
+        <div class="meta">현지식 아침 · 4.7 · 07:00~18:00</div>
+        <p>꽃집 뒤에 숨어 있는 작은 차찬텡. 가게 고양이가 테이블에 와서 앉아요. 버터 파인애플번과 밀크티 조합을 추천해요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">숙소에서 도보 12분</span>또는 셩완역 → 센트럴역 1정거장 후 도보 5분</div>
+    </li>
+
+    <li>
+      <span class="time">09:45</span>
+      <div class="stop">
+        <h3>캣스트리트 벼룩시장</h3>
+        <div class="meta">골동품 거리 · 어퍼라스카로우</div>
+        <p>예전만큼 크진 않지만 옥 소품이나 오래된 동전, 자잘한 기념품을 구경하기 좋아요. 바로 옆 할리우드로드에 감각적인 가게들이 더 많습니다.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 8분</span>저보이스가 방향으로 북쪽</div>
+    </li>
+
+    <li>
+      <span class="time">10:45</span>
+      <div class="stop">
+        <h3>Shiu Shing Hong</h3>
+        <div class="meta">향 전문점 · 4.3 · 09:30~17:30</div>
+        <p>리츠칼튼, 만다린 오리엔탈 같은 호텔 향을 재현한 룸스프레이를 100ml에 HK$80~100 정도에 팔아요. 전부 테스터가 있어서 맡아보고 고를 수 있고, 선물용으로 좋습니다.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 3분</span>같은 저보이스가, 숙소 바로 옆이에요</div>
+    </li>
+
+    <li>
+      <span class="time">12:00</span>
+      <div class="stop">
+        <h3>헝유엔</h3>
+        <div class="meta">위스키·와인 · 4.8 · 12:00~20:00</div>
+        <p>동네 술집처럼 생겼는데 스카치 셀렉션이 좋기로 유명한 곳. 시음용으로 열어둔 병이 늘 몇 개 있어요. 산 것들은 숙소에 두고 나오면 됩니다.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 5분</span>셩완 재래시장 건물로</div>
+    </li>
+
+    <li>
+      <span class="time">12:45</span>
+      <div class="stop">
+        <h3>Dong Kee</h3>
+        <div class="meta">광둥 요리 · 4.6 · ~15:00 (브레이크 있음)</div>
+        <p>재래시장 위층 쿡드푸드센터에 있는 다이파이동. 굴전과 마늘 가리비찜이 시그니처예요. 양이 많아서 두세 가지만 시켜도 충분합니다.</p>
+      </div>
+      <div class="leg"><span class="chip c-tram">트램</span>또는 <span class="chip c-walk">도보 12분</span>퀸즈로드센트럴 방향 동쪽. 2층 트램 앞자리를 추천해요 · HK$3</div>
+    </li>
+
+    <li>
+      <span class="time">14:30</span>
+      <div class="stop">
+        <h3>돈키호테 센트럴점</h3>
+        <div class="meta">일본 잡화 · 4.0 · 08:00~다음날 01:00</div>
+        <p>지하와 B층 두 개 층. 일본 과자, 화장품, 생활용품이 다 있어요. 캐리어 자리 남는 만큼만 사는 걸로.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 12분</span>짐 두고 잠깐 쉬었다 나오기</div>
+    </li>
+
+    <li>
+      <span class="time">17:00</span>
+      <div class="stop">
+        <h3>숙소에서 휴식</h3>
+        <p>산 것들 정리하고 캐리어 미리 싸두면 다음 날 아침이 편해요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 20분</span>또는 <span class="chip c-tram">트램</span>센트럴 페리부두 방향</div>
+    </li>
+
+    <li>
+      <span class="time">18:30</span>
+      <div class="stop">
+        <h3>홍콩 대관람차</h3>
+        <div class="meta">야경 · 4.3 · 12:00~22:00</div>
+        <p>한 번 타면 세 바퀴를 돌아요. 항구 쪽 자리에 앉으면 구룡반도 스카이라인이 보입니다.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 5분</span>IFC몰 방향</div>
+    </li>
+
+    <li>
+      <span class="time">19:30</span>
+      <div class="stop">
+        <h3>야경 보며 한 잔</h3>
+        <div class="meta">센트럴 하버프론트 · IFC몰 주변</div>
+        <p>관람차 바로 옆 IFC몰 옥상 정원과 4층 테라스 쪽에 하버뷰 바가 모여 있어요. 마지막 밤이니 야경 보이는 자리로 잡으면 좋겠어요.</p>
+      </div>
+      <div class="leg">
+        <span class="chip c-island">아일랜드선</span>센트럴역 → 셩완역 1정거장<br>
+        <span class="chip c-walk">또는 도보 15분</span>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ================= DAY 4 ================= -->
+<section class="day">
+  <div class="day-head">
+    <span class="day-num">4</span>
+    <h2 class="day-title">공항으로</h2>
+    <span class="day-date">목요일</span>
+  </div>
+
+  <ol class="tl">
+    <li>
+      <span class="time">09:00</span>
+      <div class="stop">
+        <h3>숙소 체크아웃</h3>
+        <p>12시 비행기라 10시까지는 공항에 도착해 있는 게 안전해요.</p>
+      </div>
+      <div class="leg">
+        <span class="chip c-aex">공항철도</span>추천 · 총 40분<br>
+        셩완역 → 센트럴역 1정거장 → 지하 통로로 홍콩역 연결 → 공항철도 24분 · HK$115.<br>
+        홍콩역에서 <b>사전 수속</b>이 되는 항공사면 여기서 짐을 부치고 갈 수 있어요.<br><br>
+        <span class="chip c-bus">A11 버스</span>대안 · 약 60분 · HK$42<br>
+        셩완에서 타면 갈아탈 필요가 없어서 짐이 많을 때 편해요.
+      </div>
+    </li>
+
+    <li>
+      <span class="time">10:00</span>
+      <div class="stop"><h3>홍콩국제공항</h3></div>
+    </li>
+  </ol>
+</section>
+
+<div class="card">
+  <h4>알아두면 좋은 것</h4>
+  <ul>
+    <li><b>MTR 환승</b> — 셩완에서 구룡반도로 갈 땐 센트럴역에서 갈아타요. 같은 역 안에서 이동하니 개찰구를 나가지 않아도 됩니다.</li>
+    <li><b>트램</b> — 뒤로 타서 앞으로 내리면서 요금을 내요. 거리와 상관없이 HK$3. 2층 맨 앞자리가 명당이에요.</li>
+    <li><b>스타페리</b> — 침사추이와 센트럴을 오가는 배. 8분에 HK$5인데 야경 명소나 다름없어요.</li>
+    <li><b>택시</b> — 홍콩섬은 빨간 택시. 기본요금 HK$29부터 시작하고, 짧은 거리는 꽤 저렴해요.</li>
+    <li><b>비 오는 날</b> — 센트럴은 건물끼리 연결된 육교가 촘촘해서 우산 없이도 꽤 다닐 수 있어요.</li>
+  </ul>
+</div>
+
+<footer>
+  전부 걷기 편한 순서로 짜뒀지만<br>
+  마음에 안 드는 건 건너뛰어도 괜찮아요.<br>
+  잘 다녀와요.
+</footer>
+
+</div>
+</body>
+</html>
