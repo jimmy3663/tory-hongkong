@@ -101,6 +101,18 @@
     margin-top:3px;font-size:12px;color:var(--muted);
   }
   .stop p{margin:9px 0 0;font-size:13.5px;color:#CFDCDD}
+  .stop h3 a.maplink{
+    color:inherit;
+    text-decoration:none;
+    border-bottom:1px dashed rgba(79,224,176,.55);
+    padding-bottom:1px;
+    transition:color .15s ease,border-color .15s ease;
+  }
+  .stop h3 a.maplink:hover,
+  .stop h3 a.maplink:active{
+    color:var(--jade);
+    border-bottom-color:var(--jade);
+  }
   .warn{
     margin-top:10px;padding:9px 11px;
     background:rgba(255,107,157,.1);
@@ -173,6 +185,7 @@
     <li><b>옥토퍼스 카드</b> — MTR·버스·트램·스타페리 전부 이걸로. 공항 도착층에서 바로 살 수 있어요. 애플페이 옥토퍼스도 가능.</li>
     <li><b>현금 조금</b> — 제니베이커리, 재래시장, 노포는 카드가 안 되는 곳이 많아요.</li>
     <li><b>가장 가까운 역은 셩완역(Sheung Wan)</b>, 파란색 아일랜드선. 숙소에서 도보 5분쯤이에요.</li>
+    <li><b>장소 이름을 누르면</b> 구글맵으로 바로 연결돼요. 길 찾기에 쓰세요.</li>
   </ul>
 </div>
 
@@ -188,7 +201,7 @@
     <li>
       <span class="time">15:00</span>
       <div class="stop">
-        <h3>홍콩국제공항 도착</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hong%20Kong%20International%20Airport" target="_blank" rel="noopener">홍콩국제공항 도착</a></h3>
         <div class="meta">입국 심사 + 짐 찾기 40분쯤</div>
       </div>
       <div class="leg">
@@ -211,7 +224,7 @@
     <li>
       <span class="time">16:30</span>
       <div class="stop">
-        <h3>GALET ANTIQUE</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=GALET%20ANTIQUE%20Hollywood%20Road%20Hong%20Kong" target="_blank" rel="noopener">GALET ANTIQUE</a></h3>
         <div class="meta">빈티지 소품샵 · 4.6 · ~19:00</div>
         <p>유럽 앤티크 그릇과 조명이 가득한 작은 가게. 주인이 음악 취향도 좋다고 소문난 곳이에요.</p>
       </div>
@@ -221,7 +234,7 @@
     <li>
       <span class="time">17:15</span>
       <div class="stop">
-        <h3>Dram Good Whisky Shop</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Dram%20Good%20Whisky%20Shop%20Lyndhurst%20Terrace%20Hong%20Kong" target="_blank" rel="noopener">Dram Good Whisky Shop</a></h3>
         <div class="meta">위스키 전문점 · 5.0 · ~19:00</div>
         <p>린드허스트 테라스 건물 15층. 입구가 좀 숨어 있으니 엘리베이터를 타고 올라가면 돼요. 시음할 수 있는 병을 여러 개 열어둡니다.</p>
         <div class="warn">19시에 문 닫아요. 늦어지면 3일차 헝유엔으로 미뤄도 괜찮아요.</div>
@@ -232,7 +245,7 @@
     <li>
       <span class="time">18:00</span>
       <div class="stop">
-        <h3>미드레벨 에스컬레이터</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Central%20Mid-Levels%20Escalator%20Hong%20Kong" target="_blank" rel="noopener">미드레벨 에스컬레이터</a></h3>
         <div class="meta">관광 · 4.1 · 06:00~24:00</div>
         <p>세계에서 가장 긴 야외 에스컬레이터. 오전 10시 이후로는 계속 올라가는 방향이에요. 타고 올라가다가 마음에 드는 골목에서 내리면 거기가 소호예요.</p>
       </div>
@@ -242,7 +255,7 @@
     <li>
       <span class="time">18:30</span>
       <div class="stop">
-        <h3>Fiata Pizza</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Fiata%20Pizza%20Soho%20Hong%20Kong" target="_blank" rel="noopener">Fiata Pizza</a></h3>
         <div class="meta">나폴리 피자 · 4.3 · 18:00~21:30</div>
         <p>미쉐린 빕구르망에 오른 화덕 피자집. 자리가 몇 개 없어서 6시 오픈에 맞춰 가는 게 안전해요. 디아볼라가 대표 메뉴.</p>
       </div>
@@ -252,7 +265,7 @@
     <li>
       <span class="time">20:00</span>
       <div class="stop">
-        <h3>Vission Bakery</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Vission%20Bakery%20Soho%20Hong%20Kong" target="_blank" rel="noopener">Vission Bakery</a></h3>
         <div class="meta">베이커리 · 4.4 · ~21:00</div>
         <p>말차 모찌 데니시가 시그니처. 사서 2시간 안에 먹으라고 안내해주는 집이라 그 자리에서 하나 먹고 가는 게 좋아요.</p>
       </div>
@@ -292,7 +305,7 @@
     <li>
       <span class="time">11:00</span>
       <div class="stop">
-        <h3>금붕어 거리</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Goldfish%20Market%20Tung%20Choi%20Street%20Mong%20Kok" target="_blank" rel="noopener">금붕어 거리</a></h3>
         <div class="meta">관광 · 4.0 · 11:00~21:45</div>
         <p>비닐봉지에 담긴 물고기가 가게 앞에 줄줄이 걸려 있는 거리. 촬영 금지 스티커가 붙은 가게가 많으니 사진은 조심해서 찍는 게 좋아요.</p>
       </div>
@@ -302,7 +315,7 @@
     <li>
       <span class="time">12:00</span>
       <div class="stop">
-        <h3>레이디스마켓</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Ladies%20Market%20Mong%20Kok%20Hong%20Kong" target="_blank" rel="noopener">레이디스마켓</a></h3>
         <div class="meta">시장 · 3.9 · 11:00~23:30</div>
         <p>기념품, 가방, 자잘한 소품 위주. 정가가 없으니 흥정은 기본이에요. 전자제품은 안 사는 게 좋습니다.</p>
       </div>
@@ -312,7 +325,7 @@
     <li>
       <span class="time">13:30</span>
       <div class="stop">
-        <h3>Gommone Whisky Shop</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Gommone%20Whisky%20Shop%20Hong%20Kong" target="_blank" rel="noopener">Gommone Whisky Shop</a></h3>
         <div class="meta">위스키 전문점 · 4.9 · 13:30 오픈</div>
         <p>상가 건물 1층 안쪽에 있어서 조금 찾기 어려워요. 스코틀랜드·아일랜드·일본 위스키를 직접 소싱해서 들여오는 집입니다.</p>
       </div>
@@ -325,7 +338,7 @@
     <li>
       <span class="time">15:00</span>
       <div class="stop">
-        <h3>Fully Tableware</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Fully%20Tableware%20Shanghai%20Street%20Mong%20Kok" target="_blank" rel="noopener">Fully Tableware</a></h3>
         <div class="meta">그릇·주방용품 · 4.3 · ~18:30</div>
         <p>상하이가 주방용품 거리에 있는 가게. 홍콩식 흑백 밀크티 컵을 다른 데보다 싸게 살 수 있어서 유명해요. 한 세트 HK$55 정도.</p>
       </div>
@@ -335,7 +348,7 @@
     <li>
       <span class="time">17:00</span>
       <div class="stop">
-        <h3>Beauty in the Pot</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Beauty%20in%20the%20Pot%20Mong%20Kok%20Hong%20Kong" target="_blank" rel="noopener">Beauty in the Pot</a></h3>
         <div class="meta">훠궈 · 4.9 · 17:00 오픈</div>
         <p>콜라겐 육수와 마라를 반반으로 시키는 게 정석. 소스 코너에서 직접 조합할 수 있고, 디저트까지 나오는 세트가 있어요.</p>
         <div class="warn">오픈런으로 17시 정각에 들어가세요. 다음 일정인 제니베이커리가 19시에 닫혀서, 18:15쯤엔 나와야 여유가 있어요.</div>
@@ -349,7 +362,7 @@
     <li>
       <span class="time">18:40</span>
       <div class="stop">
-        <h3>제니베이커리</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Jenny%20Bakery%20Tsim%20Sha%20Tsui%20Hong%20Kong" target="_blank" rel="noopener">제니베이커리</a></h3>
         <div class="meta">버터쿠키 · ~19:00 · 현금만</div>
         <p>미라도 맨션 2층 계단으로 올라가면 있어요. 줄이 길어 보여도 10분이면 빠집니다. 뭘 살지 미리 정해두면 좋아요.</p>
         <div class="warn">시간이 빠듯하면 여기를 먼저 들르고 훠궈를 나중에 먹어도 돼요. 훠궈는 새벽 2시까지 열려 있으니까요.</div>
@@ -360,7 +373,7 @@
     <li>
       <span class="time">19:20</span>
       <div class="stop">
-        <h3>Hashtag B</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hashtag%20B%20Tsim%20Sha%20Tsui%20Hong%20Kong" target="_blank" rel="noopener">Hashtag B</a></h3>
         <div class="meta">에그타르트 · 4.6 · ~22:00</div>
         <p>나폴레옹 타르트와 시그니처 에그타르트가 대표. 안에 앉을 자리는 없어서 사서 나와 걸으며 먹는 집이에요.</p>
       </div>
@@ -370,7 +383,7 @@
     <li>
       <span class="time">19:50</span>
       <div class="stop">
-        <h3>스타의 거리</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Avenue%20of%20Stars%20Tsim%20Sha%20Tsui%20Hong%20Kong" target="_blank" rel="noopener">스타의 거리</a></h3>
         <div class="meta">야경 · 하버뷰 프롬나드</div>
         <p>매일 저녁 <b>8시 정각</b>에 심포니 오브 라이트 조명쇼가 시작해요. 10분 전에 자리를 잡으면 좋습니다.</p>
       </div>
@@ -394,7 +407,7 @@
     <li>
       <span class="time">08:30</span>
       <div class="stop">
-        <h3>Kwan Lok Restaurant</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Kwan%20Lok%20Restaurant%20Sheung%20Wan%20Hong%20Kong" target="_blank" rel="noopener">Kwan Lok Restaurant</a></h3>
         <div class="meta">현지식 아침 · 4.7 · 07:00~18:00</div>
         <p>꽃집 뒤에 숨어 있는 작은 차찬텡. 가게 고양이가 테이블에 와서 앉아요. 버터 파인애플번과 밀크티 조합을 추천해요.</p>
       </div>
@@ -404,7 +417,7 @@
     <li>
       <span class="time">09:45</span>
       <div class="stop">
-        <h3>캣스트리트 벼룩시장</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Cat%20Street%20Upper%20Lascar%20Row%20Sheung%20Wan%20Hong%20Kong" target="_blank" rel="noopener">캣스트리트 벼룩시장</a></h3>
         <div class="meta">골동품 거리 · 어퍼라스카로우</div>
         <p>예전만큼 크진 않지만 옥 소품이나 오래된 동전, 자잘한 기념품을 구경하기 좋아요. 바로 옆 할리우드로드에 감각적인 가게들이 더 많습니다.</p>
       </div>
@@ -414,7 +427,7 @@
     <li>
       <span class="time">10:45</span>
       <div class="stop">
-        <h3>Shiu Shing Hong</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Shiu%20Shing%20Hong%20Sheung%20Wan%20Hong%20Kong" target="_blank" rel="noopener">Shiu Shing Hong</a></h3>
         <div class="meta">향 전문점 · 4.3 · 09:30~17:30</div>
         <p>리츠칼튼, 만다린 오리엔탈 같은 호텔 향을 재현한 룸스프레이를 100ml에 HK$80~100 정도에 팔아요. 전부 테스터가 있어서 맡아보고 고를 수 있고, 선물용으로 좋습니다.</p>
       </div>
@@ -424,7 +437,7 @@
     <li>
       <span class="time">12:00</span>
       <div class="stop">
-        <h3>헝유엔</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hung%20Yuen%20Provisions%20%E9%B4%BB%E6%BA%90%E8%BE%A6%E9%A4%A8%2068%20Jervois%20Street%20Sheung%20Wan" target="_blank" rel="noopener">헝유엔</a></h3>
         <div class="meta">위스키·와인 · 4.8 · 12:00~20:00</div>
         <p>동네 술집처럼 생겼는데 스카치 셀렉션이 좋기로 유명한 곳. 시음용으로 열어둔 병이 늘 몇 개 있어요. 산 것들은 숙소에 두고 나오면 됩니다.</p>
       </div>
@@ -434,7 +447,7 @@
     <li>
       <span class="time">12:45</span>
       <div class="stop">
-        <h3>Dong Kee</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Dong%20Kee%20Sheung%20Wan%20Cooked%20Food%20Centre%20Hong%20Kong" target="_blank" rel="noopener">Dong Kee</a></h3>
         <div class="meta">광둥 요리 · 4.6 · ~15:00 (브레이크 있음)</div>
         <p>재래시장 위층 쿡드푸드센터에 있는 다이파이동. 굴전과 마늘 가리비찜이 시그니처예요. 양이 많아서 두세 가지만 시켜도 충분합니다.</p>
       </div>
@@ -444,7 +457,7 @@
     <li>
       <span class="time">14:30</span>
       <div class="stop">
-        <h3>돈키호테 센트럴점</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Don%20Don%20Donki%20Central%20Hong%20Kong" target="_blank" rel="noopener">돈키호테 센트럴점</a></h3>
         <div class="meta">일본 잡화 · 4.0 · 08:00~다음날 01:00</div>
         <p>지하와 B층 두 개 층. 일본 과자, 화장품, 생활용품이 다 있어요. 캐리어 자리 남는 만큼만 사는 걸로.</p>
       </div>
@@ -463,7 +476,7 @@
     <li>
       <span class="time">18:30</span>
       <div class="stop">
-        <h3>홍콩 대관람차</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hong%20Kong%20Observation%20Wheel%20Central" target="_blank" rel="noopener">홍콩 대관람차</a></h3>
         <div class="meta">야경 · 4.3 · 12:00~22:00</div>
         <p>한 번 타면 세 바퀴를 돌아요. 항구 쪽 자리에 앉으면 구룡반도 스카이라인이 보입니다.</p>
       </div>
@@ -473,7 +486,7 @@
     <li>
       <span class="time">19:30</span>
       <div class="stop">
-        <h3>야경 보며 한 잔</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=IFC%20Mall%20Central%20Hong%20Kong" target="_blank" rel="noopener">야경 보며 한 잔</a></h3>
         <div class="meta">센트럴 하버프론트 · IFC몰 주변</div>
         <p>관람차 바로 옆 IFC몰 옥상 정원과 4층 테라스 쪽에 하버뷰 바가 모여 있어요. 마지막 밤이니 야경 보이는 자리로 잡으면 좋겠어요.</p>
       </div>
@@ -511,7 +524,7 @@
 
     <li>
       <span class="time">10:00</span>
-      <div class="stop"><h3>홍콩국제공항</h3></div>
+      <div class="stop"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hong%20Kong%20International%20Airport" target="_blank" rel="noopener">홍콩국제공항</a></h3></div>
     </li>
   </ol>
 </section>
