@@ -9,134 +9,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0B1E22;
-    --surface:#14282D;
-    --surface-2:#1B343A;
-    --line:#26454C;
-    --text:#F0EAE0;
-    --muted:#8FA5A8;
-    --jade:#4FE0B0;
-    --neon:#FF6B9D;
-    --island:#007DC5;
-    --tsuenwan:#E60012;
-    --ferry:#1E9B54;
-    --tram:#E8A33D;
+    --ink:#0B1E22; --surface:#14282D; --surface-2:#1B343A; --line:#26454C;
+    --text:#F0EAE0; --muted:#8FA5A8; --jade:#4FE0B0; --neon:#FF6B9D;
+    --island:#007DC5; --tsuenwan:#E60012; --ferry:#1E9B54; --tram:#E8A33D;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  body{
-    background:var(--ink);
-    color:var(--text);
-    font-family:'Noto Sans KR',system-ui,sans-serif;
-    font-weight:300;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{background:var(--ink);color:var(--text);font-family:'Noto Sans KR',system-ui,sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:560px;margin:0 auto;padding:0 20px 64px}
-
-  /* ---- hero ---- */
   header{padding:56px 0 40px;text-align:center}
-  .neon{
-    font-family:'Gowun Batang',serif;
-    font-weight:700;
-    font-size:clamp(38px,11vw,54px);
-    line-height:1.1;
-    letter-spacing:.02em;
-    color:#FFF6FA;
-    text-shadow:
-      0 0 4px rgba(255,107,157,.9),
-      0 0 14px rgba(255,107,157,.65),
-      0 0 34px rgba(255,107,157,.35);
-    margin:0;
-  }
-  .hero-sub{
-    margin:18px 0 0;
-    color:var(--muted);
-    font-size:14px;
-    letter-spacing:.03em;
-  }
+  .neon{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(38px,11vw,54px);line-height:1.1;letter-spacing:.02em;color:#FFF6FA;text-shadow:0 0 4px rgba(255,107,157,.9),0 0 14px rgba(255,107,157,.65),0 0 34px rgba(255,107,157,.35);margin:0;}
+  .hero-sub{margin:18px 0 0;color:var(--muted);font-size:14px;letter-spacing:.03em;}
   .hero-sub b{color:var(--jade);font-weight:500}
-
-  /* ---- day ---- */
   .day{margin-top:44px}
-  .day-head{
-    display:flex;align-items:baseline;gap:12px;
-    padding-bottom:12px;
-    border-bottom:1px solid var(--line);
-  }
-  .day-num{
-    font-family:'Gowun Batang',serif;
-    font-size:30px;font-weight:700;
-    color:var(--jade);
-    line-height:1;
-  }
-  .day-title{
-    font-family:'Gowun Batang',serif;
-    font-size:20px;font-weight:700;
-    margin:0;flex:1;
-  }
+  .day-head{display:flex;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .day-num{font-family:'Gowun Batang',serif;font-size:30px;font-weight:700;color:var(--jade);line-height:1;}
+  .day-title{font-family:'Gowun Batang',serif;font-size:20px;font-weight:700;margin:0;flex:1;}
   .day-date{font-size:12.5px;color:var(--muted)}
-
-  /* ---- timeline ---- */
   ol.tl{list-style:none;margin:0;padding:0}
   ol.tl>li{position:relative;padding:0 0 0 60px}
-  .time{
-    position:absolute;left:0;top:20px;
-    width:46px;text-align:right;
-    font-size:12.5px;font-variant-numeric:tabular-nums;
-    color:var(--jade);font-weight:500;
-  }
-  .stop{
-    background:var(--surface);
-    border-radius:14px;
-    padding:16px 18px;
-    margin-top:14px;
-    border:1px solid var(--line);
-  }
-  .stop h3{
-    margin:0;font-size:16.5px;font-weight:500;
-    font-family:'Noto Sans KR',sans-serif;
-  }
-  .stop .meta{
-    margin-top:3px;font-size:12px;color:var(--muted);
-  }
+  .time{position:absolute;left:0;top:20px;width:46px;text-align:right;font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--jade);font-weight:500;}
+  .stop{background:var(--surface);border-radius:14px;padding:16px 18px;margin-top:14px;border:1px solid var(--line);}
+  .stop h3{margin:0;font-size:16.5px;font-weight:500;font-family:'Noto Sans KR',sans-serif;}
+  .stop .meta{margin-top:3px;font-size:12px;color:var(--muted);}
   .stop p{margin:9px 0 0;font-size:13.5px;color:#CFDCDD}
-  .stop h3 a.maplink{
-    color:inherit;
-    text-decoration:none;
-    border-bottom:1px dashed rgba(79,224,176,.55);
-    padding-bottom:1px;
-    transition:color .15s ease,border-color .15s ease;
-  }
-  .stop h3 a.maplink:hover,
-  .stop h3 a.maplink:active{
-    color:var(--jade);
-    border-bottom-color:var(--jade);
-  }
-  .warn{
-    margin-top:10px;padding:9px 11px;
-    background:rgba(255,107,157,.1);
-    border-left:2px solid var(--neon);
-    border-radius:0 6px 6px 0;
-    font-size:12.5px;color:#FFC7DB;
-  }
-
-  /* ---- transit leg (the connector carries the info) ---- */
-  .leg{
-    position:relative;
-    margin:0;padding:14px 0 14px 4px;
-    font-size:12.5px;color:var(--muted);
-  }
-  .leg::before{
-    content:"";position:absolute;left:-38px;top:0;bottom:0;
-    width:2px;background:var(--line);
-  }
-  .chip{
-    display:inline-flex;align-items:center;gap:6px;
-    padding:3px 10px;border-radius:999px;
-    font-size:11.5px;font-weight:500;color:#fff;
-    margin-right:7px;vertical-align:middle;
-  }
+  .stop p a,.leg a{color:var(--jade);text-decoration:none;border-bottom:1px dashed rgba(79,224,176,.5)}
+  .stop h3 a.maplink{color:inherit;text-decoration:none;border-bottom:1px dashed rgba(79,224,176,.55);padding-bottom:1px;transition:color .15s ease,border-color .15s ease;}
+  .stop h3 a.maplink:hover,.stop h3 a.maplink:active{color:var(--jade);border-bottom-color:var(--jade);}
+  .warn{margin-top:10px;padding:9px 11px;background:rgba(255,107,157,.1);border-left:2px solid var(--neon);border-radius:0 6px 6px 0;font-size:12.5px;color:#FFC7DB;}
+  .leg{position:relative;margin:0;padding:14px 0 14px 4px;font-size:12.5px;color:var(--muted);}
+  .leg::before{content:"";position:absolute;left:-38px;top:0;bottom:0;width:2px;background:var(--line);}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:500;color:#fff;margin-right:7px;vertical-align:middle;}
   .c-walk{background:transparent;border:1px solid var(--line);color:var(--muted)}
   .c-island{background:var(--island)}
   .c-tsuenwan{background:var(--tsuenwan)}
@@ -144,31 +47,16 @@
   .c-tram{background:var(--tram);color:#3A2600}
   .c-bus{background:#7A5CC4}
   .c-aex{background:#00888A}
-
-  /* ---- info block ---- */
-  .card{
-    background:var(--surface-2);
-    border-radius:14px;padding:20px;margin-top:20px;
-    border:1px solid var(--line);
-  }
-  .card h4{
-    margin:0 0 12px;font-size:15px;font-weight:500;
-    font-family:'Gowun Batang',serif;color:var(--jade);
-  }
+  .c-peak{background:#B23A48}
+  .card{background:var(--surface-2);border-radius:14px;padding:20px;margin-top:20px;border:1px solid var(--line);}
+  .card h4{margin:0 0 12px;font-size:15px;font-weight:500;font-family:'Gowun Batang',serif;color:var(--jade);}
   .card ul{margin:0;padding-left:17px}
   .card li{font-size:13.5px;margin-bottom:8px;color:#CFDCDD}
   .card li:last-child{margin-bottom:0}
   .card li b{color:var(--text);font-weight:500}
-
-  footer{
-    margin-top:52px;padding-top:22px;
-    border-top:1px solid var(--line);
-    font-size:12px;color:var(--muted);text-align:center;line-height:1.9;
-  }
-  @media (prefers-reduced-motion:no-preference){
-    header{animation:rise .7s ease-out both}
-    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  }
+  .card li a{color:var(--jade);text-decoration:none;border-bottom:1px dashed rgba(79,224,176,.5)}
+  footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);text-align:center;line-height:1.9;}
+  @media (prefers-reduced-motion:no-preference){header{animation:rise .7s ease-out both}@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}}
 </style>
 </head>
 <body>
@@ -176,7 +64,7 @@
 
 <header>
   <h1 class="neon">홍콩 3일</h1>
-  <p class="hero-sub">숙소 <b>셩완 저보이스가</b> 기준 · 월 오후 도착 → 목 정오 출발</p>
+  <p class="hero-sub">숙소 <b>아이클럽 셩완</b> 기준 · 월 정오(12:00) 도착 → 목 오후(13:15) 인천행 출발</p>
 </header>
 
 <div class="card">
@@ -184,222 +72,272 @@
   <ul>
     <li><b>옥토퍼스 카드</b> — MTR·버스·트램·스타페리 전부 이걸로. 공항 도착층에서 바로 살 수 있어요. 애플페이 옥토퍼스도 가능.</li>
     <li><b>현금 조금</b> — 제니베이커리, 재래시장, 노포는 카드가 안 되는 곳이 많아요.</li>
-    <li><b>가장 가까운 역은 셩완역(Sheung Wan)</b>, 파란색 아일랜드선. 숙소에서 도보 5분쯤이에요.</li>
+    <li><b>가장 가까운 역은 셩완역(Sheung Wan)</b>, 파란색 아일랜드선. 숙소에서 도보 5분쯤.</li>
     <li><b>장소 이름을 누르면</b> 구글맵으로 바로 연결돼요. 길 찾기에 쓰세요.</li>
+    <li>주신 리스트가 40곳 가까이라, <b>지역별로 묶어</b> 하루 동선을 짰어요. 못 넣은 곳은 맨 아래에 이유와 함께 정리했습니다.</li>
   </ul>
 </div>
 
-<!-- ================= DAY 1 ================= -->
 <section class="day">
   <div class="day-head">
     <span class="day-num">1</span>
-    <h2 class="day-title">센트럴 &amp; 소호</h2>
+    <h2 class="day-title">셩완 · 소호</h2>
     <span class="day-date">월요일</span>
   </div>
 
   <ol class="tl">
     <li>
-      <span class="time">15:00</span>
+      <span class="time">12:00</span>
       <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hong%20Kong%20International%20Airport" target="_blank" rel="noopener">홍콩국제공항 도착</a></h3>
         <div class="meta">입국 심사 + 짐 찾기 40분쯤</div>
       </div>
-      <div class="leg">
-        <span class="chip c-bus">A11 버스</span>약 60분 · HK$42<br>
-        캐리어가 있으니 버스를 추천해요. 공항 도착층 버스 정류장에서 A11을 타고 <b>셩완(Sheung Wan)</b>에서 내리면 숙소 근처예요. 2층 앞자리에 앉으면 칭마대교 뷰가 좋아요.<br><br>
-        <span class="chip c-aex">공항철도</span>대안 · 24분 · HK$115<br>
-        더 빠른 걸 원하면 공항철도로 홍콩역까지 간 뒤 택시 5분.
-      </div>
+      <div class="leg"><span class="chip c-bus">A11 버스</span>약 60분 · HK$42<br>캐리어가 있으니 버스가 편해요. 도착층 정류장에서 A11을 타고 <b>셩완(Sheung Wan)</b>에서 내리면 숙소 근처. 2층 앞자리는 칭마대교 뷰가 좋아요.<br><br><span class="chip c-aex">공항철도</span>대안 · 24분 · HK$115<br>더 빠른 걸 원하면 홍콩역까지 간 뒤 택시 5분.</div>
     </li>
-
     <li>
-      <span class="time">16:00</span>
+      <span class="time">13:45</span>
       <div class="stop">
-        <h3>숙소 체크인</h3>
-        <p>짐 내려놓고 가볍게 나오기. 오늘은 다 걸어서 다닐 수 있는 코스예요.</p>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=iclub%20Sheung%20Wan%20Hotel%20Hong%20Kong" target="_blank" rel="noopener">아이클럽 셩완 호텔 체크인</a></h3>
+        <p>짐 내려놓고 가볍게 나오기. 오늘은 전부 걸어서 도는 셩완·소호 코스예요.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 6분</span>할리우드로드 방향으로 동쪽</div>
+      <div class="leg"><span class="chip c-walk">도보 3분</span>숙소 근처 저보이스가·소항가 방향</div>
     </li>
-
     <li>
-      <span class="time">16:30</span>
+      <span class="time">14:15</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hung%20Yuen%20Provisions%20%E9%B4%BB%E6%BA%90%E8%BE%A6%E9%A4%A8%2068%20Jervois%20Street%20Sheung%20Wan" target="_blank" rel="noopener">헝유엔</a></h3>
+        <div class="meta">위스키·와인 · 4.8 · 12:00~20:00</div>
+        <p>동네 술집처럼 생겼는데 스카치 셀렉션으로 유명한 노포(鴻源辦館). 시음용 병이 늘 몇 개 열려 있어요. 산 건 숙소에 두고 나오면 됩니다.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 6분</span>할리우드로드 방향 동쪽</div>
+    </li>
+    <li>
+      <span class="time">14:45</span>
       <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=GALET%20ANTIQUE%20Hollywood%20Road%20Hong%20Kong" target="_blank" rel="noopener">GALET ANTIQUE</a></h3>
-        <div class="meta">빈티지 소품샵 · 4.6 · ~19:00</div>
-        <p>유럽 앤티크 그릇과 조명이 가득한 작은 가게. 주인이 음악 취향도 좋다고 소문난 곳이에요.</p>
+        <div class="meta">빈티지 소품샵 · 4.6</div>
+        <p>유럽 앤티크 그릇과 조명이 가득한 작은 가게. 가는 길 자체가 벽화·골동품 구경거리예요.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 15분</span>할리우드로드를 따라 쭉 동쪽으로. 가는 길 자체가 벽화랑 골동품 가게 구경거리예요.</div>
+      <div class="leg"><span class="chip c-walk">도보 4분</span>어퍼라스카로우 방향</div>
     </li>
-
     <li>
-      <span class="time">17:15</span>
+      <span class="time">15:10</span>
       <div class="stop">
-        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Dram%20Good%20Whisky%20Shop%20Lyndhurst%20Terrace%20Hong%20Kong" target="_blank" rel="noopener">Dram Good Whisky Shop</a></h3>
-        <div class="meta">위스키 전문점 · 5.0 · ~19:00</div>
-        <p>린드허스트 테라스 건물 15층. 입구가 좀 숨어 있으니 엘리베이터를 타고 올라가면 돼요. 시음할 수 있는 병을 여러 개 열어둡니다.</p>
-        <div class="warn">19시에 문 닫아요. 늦어지면 3일차 헝유엔으로 미뤄도 괜찮아요.</div>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Cat%20Street%20Upper%20Lascar%20Row%20Sheung%20Wan%20Hong%20Kong" target="_blank" rel="noopener">캣스트리트 벼룩시장</a></h3>
+        <div class="meta">골동품 거리 · 어퍼라스카로우</div>
+        <p>옥 소품, 오래된 동전, 자잘한 기념품 구경하기 좋아요. 바로 옆 할리우드로드에 감각적인 가게가 더 많습니다.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 5분</span>바로 옆이 미드레벨 에스컬레이터 입구예요.</div>
+      <div class="leg"><span class="chip c-walk">도보 10분</span>웰링턴가 방향(센트럴)</div>
     </li>
-
     <li>
-      <span class="time">18:00</span>
+      <span class="time">15:40</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Tsim%20Chai%20Kee%20Noodle%20Wellington%20Street%20Central%20Hong%20Kong" target="_blank" rel="noopener">침차이키</a></h3>
+        <div class="meta">완탕면 · 4.2 · 늦은 점심</div>
+        <p>새우완탕·소고기·생선완자 세 가지가 대표. 저렴하고 빨라요. 바로 옆 <a href="https://www.google.com/maps/search/?api=1&amp;query=Mak%27s%20Noodle%20Wellington%20Street%20Central%20Hong%20Kong" target="_blank" rel="noopener">막스누들</a>(미쉐린)도 유명하니 취향껏 골라도 좋아요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 4분</span>센트럴 마켓 방향</div>
+    </li>
+    <li>
+      <span class="time">16:15</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Central%20Market%20Hong%20Kong" target="_blank" rel="noopener">Central Market &amp; TINY</a></h3>
+        <div class="meta">리노베이션 명소 · ~22:00</div>
+        <p>옛 센트럴 시장을 개조한 복합공간. 안에 미니어처 피규어 브랜드 <b>TINY(Central Market)</b> 매장이 있어요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 3분</span>윙워가(Wing Wo St)로</div>
+    </li>
+    <li>
+      <span class="time">16:40</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Jenny%20Bakery%20Sheung%20Wan%20Wing%20Wo%20Street%20Hong%20Kong" target="_blank" rel="noopener">제니베이커리 셩완점</a></h3>
+        <div class="meta">버터쿠키 · 10:00~19:00 · 현금만</div>
+        <p>침사추이점 대신 이 셩완점(윙워가)에서 사요. 숙소·센트럴 마켓 바로 근처라 동선이 딱 맞아요. 버터쿠키·마카다미아 크리스프가 대표. 뭘 살지 미리 정해두면 10분이면 빠집니다.</p>
+        <div class="warn">19시에 닫아요. 쿠키는 밀봉 틴이라 들고 다녀도 되지만, 저녁 내내 걱정되면 잠깐 숙소에 두고 나와도 좋아요.</div>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 4분</span>미드레벨 에스컬레이터 입구로</div>
+    </li>
+    <li>
+      <span class="time">17:05</span>
       <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Central%20Mid-Levels%20Escalator%20Hong%20Kong" target="_blank" rel="noopener">미드레벨 에스컬레이터</a></h3>
         <div class="meta">관광 · 4.1 · 06:00~24:00</div>
-        <p>세계에서 가장 긴 야외 에스컬레이터. 오전 10시 이후로는 계속 올라가는 방향이에요. 타고 올라가다가 마음에 드는 골목에서 내리면 거기가 소호예요.</p>
+        <p>세계에서 가장 긴 야외 에스컬레이터. 오전 10시 이후엔 계속 올라가는 방향이에요. 마음에 드는 골목에서 내리면 거기가 소호.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 2분</span>스탠턴가에서 내리면 바로</div>
+      <div class="leg"><span class="chip c-walk">도보 3분</span>소호 게이지가 방향</div>
     </li>
-
     <li>
-      <span class="time">18:30</span>
+      <span class="time">17:20</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Lan%20Fong%20Yuen%20%E8%98%AD%E8%8A%B3%E5%9C%92%20Soho%20Hong%20Kong" target="_blank" rel="noopener">란퐁유엔 소호점</a></h3>
+        <div class="meta">홍콩 밀크티 원조 · 4.1 · 저녁엔 일찍 닫음</div>
+        <p>실크스타킹 밀크티의 원조집. 밀크티에 폭찹번이나 라면 조합으로 티타임 하기 좋아요. 낮에만 하니 저녁 전에 들르는 게 안전해요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 3분</span>린드허스트 테라스로</div>
+    </li>
+    <li>
+      <span class="time">17:50</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Dram%20Good%20Whisky%20Shop%20Lyndhurst%20Terrace%20Hong%20Kong" target="_blank" rel="noopener">Dram Good Whisky Shop</a></h3>
+        <div class="meta">위스키 전문점 · 5.0 · ~19:00</div>
+        <p>린드허스트 테라스 건물 15층. 입구가 숨어 있으니 엘리베이터로 올라가세요. 시음할 수 있는 병을 여러 개 열어둡니다.</p>
+        <div class="warn">19시에 닫아요. 늦으면 헝유엔에서 이미 봤으니 건너뛰어도 괜찮아요.</div>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 4분</span>소호 피자집으로</div>
+    </li>
+    <li>
+      <span class="time">18:20</span>
       <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Fiata%20Pizza%20Soho%20Hong%20Kong" target="_blank" rel="noopener">Fiata Pizza</a></h3>
         <div class="meta">나폴리 피자 · 4.3 · 18:00~21:30</div>
-        <p>미쉐린 빕구르망에 오른 화덕 피자집. 자리가 몇 개 없어서 6시 오픈에 맞춰 가는 게 안전해요. 디아볼라가 대표 메뉴.</p>
+        <p>미쉐린 빕구르망 화덕피자. 자리가 적어서 오픈 직후가 안전해요. 디아볼라가 대표.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 1분</span>같은 거리 끝</div>
+      <div class="leg"><span class="chip c-walk">도보 3분</span>같은 소호 골목 안</div>
     </li>
-
     <li>
-      <span class="time">20:00</span>
+      <span class="time">19:45</span>
       <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Vission%20Bakery%20Soho%20Hong%20Kong" target="_blank" rel="noopener">Vission Bakery</a></h3>
         <div class="meta">베이커리 · 4.4 · ~21:00</div>
-        <p>말차 모찌 데니시가 시그니처. 사서 2시간 안에 먹으라고 안내해주는 집이라 그 자리에서 하나 먹고 가는 게 좋아요.</p>
+        <p>말차 모찌 데니시가 시그니처. 2시간 안에 먹으라고 안내해줘서 그 자리에서 하나 먹고 가는 게 좋아요.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 15분</span>내리막이라 걸어가도 편하고, 피곤하면 택시로 HK$30 정도예요.</div>
+      <div class="leg"><span class="chip c-walk">도보 8분</span>내리막, 퀸즈로드센트럴로</div>
     </li>
-
     <li>
-      <span class="time">20:40</span>
-      <div class="stop"><h3>숙소</h3></div>
+      <span class="time">20:15</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Don%20Don%20Donki%20Central%20100QRC%20Queen%27s%20Road%20Central%20Hong%20Kong" target="_blank" rel="noopener">DON DON DONKI Central (100QRC)</a></h3>
+        <div class="meta">일본 잡화 · 4.0 · ~다음날 01:00</div>
+        <p>일본 과자·화장품·생활용품. 늦게까지 열어서 첫날 야식이나 간단한 쇼핑에 좋아요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 10분</span>셩완 숙소로 복귀</div>
     </li>
   </ol>
 </section>
 
-<!-- ================= DAY 2 ================= -->
 <section class="day">
   <div class="day-head">
     <span class="day-num">2</span>
-    <h2 class="day-title">몽콕에서 침사추이까지</h2>
+    <h2 class="day-title">구룡 — 몽콕에서 침사추이까지</h2>
     <span class="day-date">화요일</span>
   </div>
 
   <ol class="tl">
     <li>
-      <span class="time">10:30</span>
+      <span class="time">10:15</span>
       <div class="stop">
         <h3>숙소 출발</h3>
-        <p>가장 북쪽 금붕어 거리에서 시작해 하루 종일 남쪽으로 내려오는 코스예요.</p>
+        <p>가장 북쪽 프린스에드워드에서 시작해 하루 종일 남쪽으로 내려오는 코스예요.</p>
       </div>
-      <div class="leg">
-        <span class="chip c-walk">도보 5분</span>셩완역까지<br><br>
-        <span class="chip c-island">아일랜드선</span>센트럴역까지 1정거장<br>
-        <span class="chip c-tsuenwan">췬완선</span>센트럴역에서 갈아타고 프린스에드워드역까지 6정거장<br><br>
-        전체 25분 · HK$12 · <b>B2 출구</b>로 나오세요.
-      </div>
+      <div class="leg"><span class="chip c-walk">도보 5분</span>셩완역까지<br><br><span class="chip c-island">아일랜드선</span>센트럴역 1정거장<br><span class="chip c-tsuenwan">췬완선</span>센트럴에서 갈아타고 프린스에드워드역까지 6정거장<br><br>전체 25분 · HK$12 · <b>B2 출구</b></div>
     </li>
-
     <li>
       <span class="time">11:00</span>
       <div class="stop">
-        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Goldfish%20Market%20Tung%20Choi%20Street%20Mong%20Kok" target="_blank" rel="noopener">금붕어 거리</a></h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Goldfish%20Market%20Tung%20Choi%20Street%20Mong%20Kok" target="_blank" rel="noopener">금붕어 시장</a></h3>
         <div class="meta">관광 · 4.0 · 11:00~21:45</div>
-        <p>비닐봉지에 담긴 물고기가 가게 앞에 줄줄이 걸려 있는 거리. 촬영 금지 스티커가 붙은 가게가 많으니 사진은 조심해서 찍는 게 좋아요.</p>
+        <p>비닐봉지에 담긴 물고기가 가게 앞에 줄줄이 걸린 거리. 촬영 금지 스티커 붙은 가게가 많으니 사진은 조심해서.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 10분</span>퉁초이가를 따라 남쪽으로. 그대로 걸으면 레이디스마켓이 이어져요.</div>
+      <div class="leg"><span class="chip c-walk">도보 5분</span>퉁초이가 위쪽 원 딤섬으로</div>
     </li>
-
     <li>
-      <span class="time">12:00</span>
+      <span class="time">11:20</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=One%20Dim%20Sum%20Prince%20Edward%20Hong%20Kong" target="_blank" rel="noopener">원 딤섬 (One Dim Sum)</a></h3>
+        <div class="meta">딤섬 · 4.3 · 09:30~ · 브런치</div>
+        <p>프린스에드워드의 인기 딤섬집. 새우 하가우·시우마이·바베큐번이 기본. 저렴하고 회전이 빨라요.</p>
+        <div class="warn">리스트에 &lsquo;원 딤섬 (x2)&rsquo;라고 적어둔 거 봤어요. 정말 두 번 갈 거면 Day 2 저녁의 록예딤섬 자리를 원 딤섬으로 바꿔도 돼요.</div>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 8분</span>퉁초이가를 따라 남쪽, 레이디스마켓으로</div>
+    </li>
+    <li>
+      <span class="time">12:45</span>
       <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Ladies%20Market%20Mong%20Kok%20Hong%20Kong" target="_blank" rel="noopener">레이디스마켓</a></h3>
         <div class="meta">시장 · 3.9 · 11:00~23:30</div>
-        <p>기념품, 가방, 자잘한 소품 위주. 정가가 없으니 흥정은 기본이에요. 전자제품은 안 사는 게 좋습니다.</p>
+        <p>기념품·가방·소품 위주. 정가가 없으니 흥정은 기본. 전자제품은 피하는 게 좋아요.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 5분</span>파윤가 방향</div>
+      <div class="leg"><span class="chip c-walk">도보 8분</span>상하이가 주방용품 거리로</div>
     </li>
-
     <li>
       <span class="time">13:30</span>
       <div class="stop">
-        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Gommone%20Whisky%20Shop%20Hong%20Kong" target="_blank" rel="noopener">Gommone Whisky Shop</a></h3>
-        <div class="meta">위스키 전문점 · 4.9 · 13:30 오픈</div>
-        <p>상가 건물 1층 안쪽에 있어서 조금 찾기 어려워요. 스코틀랜드·아일랜드·일본 위스키를 직접 소싱해서 들여오는 집입니다.</p>
-      </div>
-      <div class="leg">
-        <span class="chip c-tsuenwan">췬완선</span>몽콕역 → 야마테이역 1정거장<br>
-        <span class="chip c-walk">또는 도보 15분</span>상하이가 방향으로 남쪽
-      </div>
-    </li>
-
-    <li>
-      <span class="time">15:00</span>
-      <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Fully%20Tableware%20Shanghai%20Street%20Mong%20Kok" target="_blank" rel="noopener">Fully Tableware</a></h3>
         <div class="meta">그릇·주방용품 · 4.3 · ~18:30</div>
-        <p>상하이가 주방용품 거리에 있는 가게. 홍콩식 흑백 밀크티 컵을 다른 데보다 싸게 살 수 있어서 유명해요. 한 세트 HK$55 정도.</p>
+        <p>상하이가 주방거리의 가게. 홍콩식 흑백 밀크티 컵을 싸게 살 수 있어요. 한 세트 HK$55 정도.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 12분</span>둔다스가 방향으로 북동쪽. 몽콕역 근처예요.</div>
+      <div class="leg"><span class="chip c-walk">도보 8분</span>야우마테이 방향 남쪽</div>
     </li>
-
     <li>
-      <span class="time">17:00</span>
+      <span class="time">14:00</span>
       <div class="stop">
-        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Beauty%20in%20the%20Pot%20Mong%20Kok%20Hong%20Kong" target="_blank" rel="noopener">Beauty in the Pot</a></h3>
-        <div class="meta">훠궈 · 4.9 · 17:00 오픈</div>
-        <p>콜라겐 육수와 마라를 반반으로 시키는 게 정석. 소스 코너에서 직접 조합할 수 있고, 디저트까지 나오는 세트가 있어요.</p>
-        <div class="warn">오픈런으로 17시 정각에 들어가세요. 다음 일정인 제니베이커리가 19시에 닫혀서, 18:15쯤엔 나와야 여유가 있어요.</div>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Gommone%20Whisky%20Yau%20Ma%20Tei%20Hong%20Kong" target="_blank" rel="noopener">Gommone Hong Kong</a></h3>
+        <div class="meta">위스키 전문점 · 4.9 · 13:30 오픈</div>
+        <p>상가 1층 안쪽이라 조금 찾기 어려워요. 스코틀랜드·아일랜드·일본 위스키를 직접 소싱해 들여옵니다.</p>
       </div>
-      <div class="leg">
-        <span class="chip c-tsuenwan">췬완선</span>몽콕역 → 침사추이역 4정거장 · 10분<br>
-        나단로드 쪽 출구로 나오면 바로 앞이에요.
-      </div>
+      <div class="leg"><span class="chip c-walk">도보 6분</span>템플스트리트 미도 카페로</div>
     </li>
-
     <li>
-      <span class="time">18:40</span>
+      <span class="time">14:40</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Mido%20Cafe%20%E7%BE%8E%E9%83%BD%E9%A4%90%E5%AE%A4%20Temple%20Street%20Yau%20Ma%20Tei%20Hong%20Kong" target="_blank" rel="noopener">미도 카페</a></h3>
+        <div class="meta">노포 차찬텡 · 4.1 · 티타임</div>
+        <p>1950년대부터 그대로인 상징적인 차찬텡. 2층 창가에서 밀크티와 바오짜이판, 프렌치토스트를 즐기기 좋아요.</p>
+      </div>
+      <div class="leg"><span class="chip c-tsuenwan">췬완선</span>야우마테이 → 침사추이 2정거장<br><span class="chip c-walk">또는 도보 25분</span>네이던로드 따라 남쪽</div>
+    </li>
+    <li>
+      <span class="time">15:45</span>
       <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Jenny%20Bakery%20Tsim%20Sha%20Tsui%20Hong%20Kong" target="_blank" rel="noopener">제니베이커리</a></h3>
         <div class="meta">버터쿠키 · ~19:00 · 현금만</div>
         <p>미라도 맨션 2층 계단으로 올라가면 있어요. 줄이 길어 보여도 10분이면 빠집니다. 뭘 살지 미리 정해두면 좋아요.</p>
-        <div class="warn">시간이 빠듯하면 여기를 먼저 들르고 훠궈를 나중에 먹어도 돼요. 훠궈는 새벽 2시까지 열려 있으니까요.</div>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 6분</span>카나본로드 방향</div>
+      <div class="leg"><span class="chip c-walk">도보 5분</span>험프리스가 방향</div>
     </li>
-
     <li>
-      <span class="time">19:20</span>
+      <span class="time">16:20</span>
       <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hashtag%20B%20Tsim%20Sha%20Tsui%20Hong%20Kong" target="_blank" rel="noopener">Hashtag B</a></h3>
         <div class="meta">에그타르트 · 4.6 · ~22:00</div>
-        <p>나폴레옹 타르트와 시그니처 에그타르트가 대표. 안에 앉을 자리는 없어서 사서 나와 걸으며 먹는 집이에요.</p>
+        <p>나폴레옹 타르트와 시그니처 에그타르트가 대표. 앉을 자리는 없어서 사서 걸으며 먹어요. 근처 <a href="https://www.google.com/maps/search/?api=1&amp;query=Marouf%20%26%20Puff%20Bake%20Humphreys%20Avenue%20Tsim%20Sha%20Tsui%20Hong%20Kong" target="_blank" rel="noopener">Marouf &amp; Puff Bake</a>(할랄·에그타르트, 4.6)도 좋아서 취향껏 골라도 됩니다.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 10분</span>바닷가 쪽으로 내려가면 프롬나드가 나와요.</div>
+      <div class="leg"><span class="chip c-walk">도보 6분</span>한커우로드(Hankow Rd)로</div>
     </li>
-
     <li>
-      <span class="time">19:50</span>
+      <span class="time">17:15</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Log%20Ye%20Dim%20Sum%20Hankow%20Road%20Tsim%20Sha%20Tsui%20Hong%20Kong" target="_blank" rel="noopener">록예딤섬 (Log Ye Dim Sum)</a></h3>
+        <div class="meta">모던 딤섬 · 4.1 · 이른 저녁</div>
+        <p>한커우로드의 작고 세련된 딤섬집. 전통 딤섬을 살짝 변주한 메뉴가 뜨겁게 나와요. 가볍고 빠른 한 끼를 원하면 <a href="https://www.google.com/maps/search/?api=1&amp;query=TamJai%20Yunnan%20Mixian%20Tsim%20Sha%20Tsui%20Hong%20Kong" target="_blank" rel="noopener">탄자이 운남 쌀국수</a>로 바꿔도 좋아요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 10분</span>바닷가 프롬나드로</div>
+    </li>
+    <li>
+      <span class="time">19:00</span>
       <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Avenue%20of%20Stars%20Tsim%20Sha%20Tsui%20Hong%20Kong" target="_blank" rel="noopener">스타의 거리</a></h3>
         <div class="meta">야경 · 하버뷰 프롬나드</div>
         <p>매일 저녁 <b>8시 정각</b>에 심포니 오브 라이트 조명쇼가 시작해요. 10분 전에 자리를 잡으면 좋습니다.</p>
       </div>
-      <div class="leg">
-        <span class="chip c-ferry">스타페리</span>침사추이 → 센트럴 · 8분 · HK$5<br>
-        배 위에서 보는 야경이 제일 예뻐요. 23시까지 운항합니다. 내려서 숙소까지는 도보 20분 또는 택시 5분.
+      <div class="leg"><span class="chip c-tsuenwan">췬완선</span>(옵션) 침사추이 → 조던/야우마테이 1~2정거장<br>밤에 활기 도는 <b>템플스트리트 야시장</b>을 마지막에 둘러봐도 좋아요. 생략하면 아래 스타페리로 바로 복귀.</div>
+    </li>
+    <li>
+      <span class="time">20:30</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Temple%20Street%20Night%20Market%20Yau%20Ma%20Tei%20Hong%20Kong" target="_blank" rel="noopener">템플스트리트 야시장 (옵션)</a></h3>
+        <div class="meta">야시장 · 저녁~심야</div>
+        <p>점집·노포·기념품 노점이 늘어선 밤의 거리. 다이파이동에서 간단히 야식도 가능. 피곤하면 건너뛰고 바로 배 타도 돼요.</p>
       </div>
+      <div class="leg"><span class="chip c-ferry">스타페리</span>침사추이 → 센트럴 · 8분 · HK$5<br>배 위 야경이 제일 예뻐요(23시까지 운항). 내려서 숙소까지 도보 20분 또는 택시 5분.</div>
     </li>
   </ol>
 </section>
 
-<!-- ================= DAY 3 ================= -->
 <section class="day">
   <div class="day-head">
     <span class="day-num">3</span>
-    <h2 class="day-title">셩완 쇼핑과 마지막 밤</h2>
+    <h2 class="day-title">홍콩섬 — 피크 · 케네디타운 · 코즈웨이베이</h2>
     <span class="day-date">수요일</span>
   </div>
 
@@ -409,96 +347,87 @@
       <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Kwan%20Lok%20Restaurant%20Sheung%20Wan%20Hong%20Kong" target="_blank" rel="noopener">Kwan Lok Restaurant</a></h3>
         <div class="meta">현지식 아침 · 4.7 · 07:00~18:00</div>
-        <p>꽃집 뒤에 숨어 있는 작은 차찬텡. 가게 고양이가 테이블에 와서 앉아요. 버터 파인애플번과 밀크티 조합을 추천해요.</p>
+        <p>꽃집 뒤에 숨은 작은 차찬텡. 가게 고양이가 테이블에 앉기도 해요. 버터 파인애플번 + 밀크티 추천.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">숙소에서 도보 12분</span>또는 셩완역 → 센트럴역 1정거장 후 도보 5분</div>
+      <div class="leg"><span class="chip c-walk">도보 10분</span>센트럴 가든로드 피크트램 하부역으로<br>또는 15C 버스</div>
     </li>
-
     <li>
-      <span class="time">09:45</span>
+      <span class="time">09:30</span>
       <div class="stop">
-        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Cat%20Street%20Upper%20Lascar%20Row%20Sheung%20Wan%20Hong%20Kong" target="_blank" rel="noopener">캣스트리트 벼룩시장</a></h3>
-        <div class="meta">골동품 거리 · 어퍼라스카로우</div>
-        <p>예전만큼 크진 않지만 옥 소품이나 오래된 동전, 자잘한 기념품을 구경하기 좋아요. 바로 옆 할리우드로드에 감각적인 가게들이 더 많습니다.</p>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Peak%20Tram%20Lower%20Terminus%20Garden%20Road%20Central%20Hong%20Kong" target="_blank" rel="noopener">The Peak Tram</a></h3>
+        <div class="meta">관광 · 빅토리아 피크</div>
+        <p>가파른 트램을 타고 빅토리아 피크로. 스카이테라스428에서 시내와 항구가 한눈에 들어와요.</p>
+        <div class="warn">트램 표는 온라인 예매로 사두면 줄을 크게 줄일 수 있어요. 오전이 사람이 덜 붐빕니다.</div>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 8분</span>저보이스가 방향으로 북쪽</div>
+      <div class="leg"><span class="chip c-peak">피크트램</span>하산 후 센트럴로<br><span class="chip c-island">아일랜드선</span>센트럴/성완 → 케네디타운(서쪽 종점 방향)</div>
     </li>
-
-    <li>
-      <span class="time">10:45</span>
-      <div class="stop">
-        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Shiu%20Shing%20Hong%20Sheung%20Wan%20Hong%20Kong" target="_blank" rel="noopener">Shiu Shing Hong</a></h3>
-        <div class="meta">향 전문점 · 4.3 · 09:30~17:30</div>
-        <p>리츠칼튼, 만다린 오리엔탈 같은 호텔 향을 재현한 룸스프레이를 100ml에 HK$80~100 정도에 팔아요. 전부 테스터가 있어서 맡아보고 고를 수 있고, 선물용으로 좋습니다.</p>
-      </div>
-      <div class="leg"><span class="chip c-walk">도보 3분</span>같은 저보이스가, 숙소 바로 옆이에요</div>
-    </li>
-
-    <li>
-      <span class="time">12:00</span>
-      <div class="stop">
-        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hung%20Yuen%20Provisions%20%E9%B4%BB%E6%BA%90%E8%BE%A6%E9%A4%A8%2068%20Jervois%20Street%20Sheung%20Wan" target="_blank" rel="noopener">헝유엔</a></h3>
-        <div class="meta">위스키·와인 · 4.8 · 12:00~20:00</div>
-        <p>동네 술집처럼 생겼는데 스카치 셀렉션이 좋기로 유명한 곳. 시음용으로 열어둔 병이 늘 몇 개 있어요. 산 것들은 숙소에 두고 나오면 됩니다.</p>
-      </div>
-      <div class="leg"><span class="chip c-walk">도보 5분</span>셩완 재래시장 건물로</div>
-    </li>
-
     <li>
       <span class="time">12:45</span>
       <div class="stop">
-        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Dong%20Kee%20Sheung%20Wan%20Cooked%20Food%20Centre%20Hong%20Kong" target="_blank" rel="noopener">Dong Kee</a></h3>
-        <div class="meta">광둥 요리 · 4.6 · ~15:00 (브레이크 있음)</div>
-        <p>재래시장 위층 쿡드푸드센터에 있는 다이파이동. 굴전과 마늘 가리비찜이 시그니처예요. 양이 많아서 두세 가지만 시켜도 충분합니다.</p>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Beeger%20Smithfield%20Kennedy%20Town%20Hong%20Kong" target="_blank" rel="noopener">Beeger</a></h3>
+        <div class="meta">수제버거 · 4.5 · 13:00 오픈</div>
+        <p>케네디타운의 인기 버거집. 번을 <b>파인애플번</b>으로 바꿔주는 조합이 시그니처예요. 13시 오픈에 맞춰 가면 자리가 편해요.</p>
+        <div class="warn">화요일은 휴무라 수요일에 넣었어요. 오픈 직후가 가장 여유롭습니다.</div>
       </div>
-      <div class="leg"><span class="chip c-tram">트램</span>또는 <span class="chip c-walk">도보 12분</span>퀸즈로드센트럴 방향 동쪽. 2층 트램 앞자리를 추천해요 · HK$3</div>
+      <div class="leg"><span class="chip c-walk">도보 6분</span>케네디타운 해안 프라야로</div>
     </li>
-
     <li>
-      <span class="time">14:30</span>
+      <span class="time">14:00</span>
       <div class="stop">
-        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Don%20Don%20Donki%20Central%20Hong%20Kong" target="_blank" rel="noopener">돈키호테 센트럴점</a></h3>
-        <div class="meta">일본 잡화 · 4.0 · 08:00~다음날 01:00</div>
-        <p>지하와 B층 두 개 층. 일본 과자, 화장품, 생활용품이 다 있어요. 캐리어 자리 남는 만큼만 사는 걸로.</p>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Kennedy%20Town%20Praya%20Hong%20Kong" target="_blank" rel="noopener">케네디타운 해안 산책</a></h3>
+        <div class="meta">산책 · 프라야 워터프론트</div>
+        <p>바다를 낀 프라야 산책로와 감각적인 카페들. 홍콩섬 서쪽 끝의 여유로운 동네 분위기를 느끼기 좋아요.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 12분</span>짐 두고 잠깐 쉬었다 나오기</div>
+      <div class="leg"><span class="chip c-island">아일랜드선</span>케네디타운 → 완차이(동쪽)</div>
     </li>
-
     <li>
-      <span class="time">17:00</span>
+      <span class="time">15:00</span>
       <div class="stop">
-        <h3>숙소에서 휴식</h3>
-        <p>산 것들 정리하고 캐리어 미리 싸두면 다음 날 아침이 편해요.</p>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=My%20Cup%20of%20Tea%20Spring%20Garden%20Lane%20Wan%20Chai%20Hong%20Kong" target="_blank" rel="noopener">My Cup of Tea</a></h3>
+        <div class="meta">밀크티·차찬텡 · 4.2 · ~18:30</div>
+        <p>HK$22짜리 밀크티가 이 도시 최고라는 평이 자자한 좁은 노포. 스크램블에그 샌드도 별미예요. 근처 <a href="https://www.google.com/maps/search/?api=1&amp;query=Bakehouse%20Wan%20Chai%20Hong%20Kong" target="_blank" rel="noopener">베이크하우스</a>(사워도우 에그타르트)도 지나가니 하나 픽업 추천.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 20분</span>또는 <span class="chip c-tram">트램</span>센트럴 페리부두 방향</div>
+      <div class="leg"><span class="chip c-island">아일랜드선</span>완차이 → 코즈웨이베이 1정거장<br><span class="chip c-walk">또는 도보 12분</span></div>
     </li>
-
     <li>
-      <span class="time">18:30</span>
+      <span class="time">16:00</span>
       <div class="stop">
-        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hong%20Kong%20Observation%20Wheel%20Central" target="_blank" rel="noopener">홍콩 대관람차</a></h3>
-        <div class="meta">야경 · 4.3 · 12:00~22:00</div>
-        <p>한 번 타면 세 바퀴를 돌아요. 항구 쪽 자리에 앉으면 구룡반도 스카이라인이 보입니다.</p>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hysan%20Place%20Causeway%20Bay%20Hong%20Kong" target="_blank" rel="noopener">하이산 플레이스</a></h3>
+        <div class="meta">쇼핑몰 · 코즈웨이베이</div>
+        <p>코즈웨이베이의 대표 쇼핑몰. 위층에 서점·라이프스타일 매장, 지하 식품관까지 알차요. 마지막 쇼핑 몰아서 하기 좋아요.</p>
       </div>
-      <div class="leg"><span class="chip c-walk">도보 5분</span>IFC몰 방향</div>
+      <div class="leg"><span class="chip c-walk">도보 6분</span>타임스스퀘어 방향</div>
     </li>
-
+    <li>
+      <span class="time">17:30</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Beauty%20in%20the%20Pot%20Causeway%20Bay%20Hong%20Kong" target="_blank" rel="noopener">Beauty in the Pot</a></h3>
+        <div class="meta">훠궈 · 4.9 · 17:00 오픈</div>
+        <p>콜라겐 육수 + 마라를 반반으로. 소스 코너에서 직접 조합하고, 디저트까지 나오는 세트가 있어요. 오픈 시간대가 덜 붐빕니다.</p>
+      </div>
+      <div class="leg"><span class="chip c-island">아일랜드선</span>코즈웨이베이 → 센트럴/홍콩역<br>하버프론트로</div>
+    </li>
     <li>
       <span class="time">19:30</span>
       <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hong%20Kong%20Observation%20Wheel%20AIA%20Vitality%20Park%20Central%20Hong%20Kong" target="_blank" rel="noopener">홍콩 대관람차 &amp; AIA 활력 공원</a></h3>
+        <div class="meta">야경 · 4.3 · ~22:00</div>
+        <p>한 번 타면 세 바퀴 돌아요. 항구 쪽 자리에 앉으면 구룡반도 스카이라인이 보여요. 옆 AIA 활력 공원에는 회전목마도 있어요.</p>
+      </div>
+      <div class="leg"><span class="chip c-walk">도보 5분</span>IFC몰 방향</div>
+    </li>
+    <li>
+      <span class="time">20:15</span>
+      <div class="stop">
         <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=IFC%20Mall%20Central%20Hong%20Kong" target="_blank" rel="noopener">야경 보며 한 잔</a></h3>
         <div class="meta">센트럴 하버프론트 · IFC몰 주변</div>
-        <p>관람차 바로 옆 IFC몰 옥상 정원과 4층 테라스 쪽에 하버뷰 바가 모여 있어요. 마지막 밤이니 야경 보이는 자리로 잡으면 좋겠어요.</p>
+        <p>관람차 옆 IFC몰 옥상 정원과 테라스 쪽에 하버뷰 바가 모여 있어요. 마지막 밤이니 야경 보이는 자리로.</p>
       </div>
-      <div class="leg">
-        <span class="chip c-island">아일랜드선</span>센트럴역 → 셩완역 1정거장<br>
-        <span class="chip c-walk">또는 도보 15분</span>
-      </div>
+      <div class="leg"><span class="chip c-island">아일랜드선</span>센트럴 → 셩완 1정거장<br><span class="chip c-walk">또는 도보 15분</span></div>
     </li>
   </ol>
 </section>
 
-<!-- ================= DAY 4 ================= -->
 <section class="day">
   <div class="day-head">
     <span class="day-num">4</span>
@@ -510,33 +439,50 @@
     <li>
       <span class="time">09:00</span>
       <div class="stop">
-        <h3>숙소 체크아웃</h3>
-        <p>12시 비행기라 10시까지는 공항에 도착해 있는 게 안전해요.</p>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=iclub%20Sheung%20Wan%20Hotel%20Hong%20Kong" target="_blank" rel="noopener">숙소 체크아웃</a></h3>
+        <p>13:15 비행기라 <b>11:15까지는 공항 도착</b>이 안전해요. 늦어도 10:15엔 셩완에서 출발.</p>
       </div>
-      <div class="leg">
-        <span class="chip c-aex">공항철도</span>추천 · 총 40분<br>
-        셩완역 → 센트럴역 1정거장 → 지하 통로로 홍콩역 연결 → 공항철도 24분 · HK$115.<br>
-        홍콩역에서 <b>사전 수속</b>이 되는 항공사면 여기서 짐을 부치고 갈 수 있어요.<br><br>
-        <span class="chip c-bus">A11 버스</span>대안 · 약 60분 · HK$42<br>
-        셩완에서 타면 갈아탈 필요가 없어서 짐이 많을 때 편해요.
-      </div>
+      <div class="leg"><span class="chip c-walk">도보 3분</span>숙소 옆 소항가 시우싱홍으로</div>
     </li>
-
     <li>
-      <span class="time">10:00</span>
-      <div class="stop"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hong%20Kong%20International%20Airport" target="_blank" rel="noopener">홍콩국제공항</a></h3></div>
+      <span class="time">09:30</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Shiu%20Shing%20Hong%20Sheung%20Wan%20Hong%20Kong" target="_blank" rel="noopener">Shiu Shing Hong</a></h3>
+        <div class="meta">향 전문점 · 4.3 · 09:30 오픈</div>
+        <p>리츠칼튼·만다린 오리엔탈 같은 호텔 향을 재현한 룸스프레이를 100ml에 HK$80~100에 팔아요. 전부 테스터가 있어 선물용으로 좋습니다. 마지막 쇼핑으로 딱.</p>
+      </div>
+      <div class="leg"><span class="chip c-aex">공항철도</span>추천 · 총 40분<br>셩완역 → 센트럴역 1정거장 → 지하 통로로 홍콩역 → 공항철도 24분 · HK$115. 홍콩역에서 <b>사전 수속</b>되는 항공사면 여기서 짐도 부칠 수 있어요.<br><br><span class="chip c-bus">A11 버스</span>대안 · 약 60분 · HK$42 · 셩완에서 갈아탈 필요 없음</div>
+    </li>
+    <li>
+      <span class="time">11:15</span>
+      <div class="stop">
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hong%20Kong%20International%20Airport" target="_blank" rel="noopener">홍콩국제공항</a></h3>
+        <div class="meta">13:15 인천행 출발</div>
+      </div>
     </li>
   </ol>
 </section>
 
+
+<div class="card">
+  <h4>이번 일정에 넣지 못한 곳 (다음을 위해)</h4>
+  <ul>
+    <li><b><a href="https://www.google.com/maps/search/?api=1&amp;query=Duck%20Shing%20Ho%20Java%20Road%20North%20Point%20Hong%20Kong" target="_blank" rel="noopener">Duck Shing Ho</a> (德成號 에그롤)</b> — 노스포인트라 공항 반대 방향인 데다, <b>목·금·토 오전만</b> 열고 10시 반이면 완판돼요. 목요일 13:15 비행기와는 도저히 안 맞아서 뺐어요.</li>
+    <li><b>삼수이포 (<a href="https://www.google.com/maps/search/?api=1&amp;query=Man%20Kee%20Cart%20Noodles%20Sham%20Shui%20Po%20Hong%20Kong" target="_blank" rel="noopener">Man Kee Cart Noodles</a> + <a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A6%8F%E8%8F%AF%E7%9B%B8%E6%A9%9F%20Fok%20Wah%20Camera%20Sham%20Shui%20Po%20Hong%20Kong" target="_blank" rel="noopener">福華相機</a> 카메라)</b> — 구룡 최북단이고 카메라점이 <b>12:30 오픈</b>이라 Day 2 몽콕 코스와 동선이 엇갈려요. 카메라를 꼭 넣고 싶으면 Day 2를 삼수이포에서 12:30에 시작(카메라 → Man Kee 점심 → 몽콕 남하)하는 버전으로 바꿔줄게요.</li>
+    <li><b><a href="https://www.google.com/maps/search/?api=1&amp;query=Dong%20Kee%20Sheung%20Wan%20Cooked%20Food%20Centre%20Hong%20Kong" target="_blank" rel="noopener">Dong Kee</a></b> — 셩완 재래시장 위층인데 <b>점심(~15시)</b>만 해서 저녁 코스엔 안 맞아요. Day 3 케네디타운 대신 셩완에서 점심으로 넣으면 가능(굴전·마늘 가리비찜).</li>
+    <li><b>막스누들 · 탄자이 · Marouf &amp; Puff</b> — 각각 침차이키 옆, Log Ye 대신, Hashtag B 옆으로 본문에 링크만 걸어뒀어요. 골라서 바꿔 가면 됩니다.</li>
+    <li>이 중 꼭 넣고 싶은 곳을 알려주면 <b>그 곳 기준으로 하루를 다시 짜</b> 드릴게요.</li>
+  </ul>
+</div>
+
 <div class="card">
   <h4>알아두면 좋은 것</h4>
   <ul>
-    <li><b>MTR 환승</b> — 셩완에서 구룡반도로 갈 땐 센트럴역에서 갈아타요. 같은 역 안에서 이동하니 개찰구를 나가지 않아도 됩니다.</li>
-    <li><b>트램</b> — 뒤로 타서 앞으로 내리면서 요금을 내요. 거리와 상관없이 HK$3. 2층 맨 앞자리가 명당이에요.</li>
-    <li><b>스타페리</b> — 침사추이와 센트럴을 오가는 배. 8분에 HK$5인데 야경 명소나 다름없어요.</li>
-    <li><b>택시</b> — 홍콩섬은 빨간 택시. 기본요금 HK$29부터 시작하고, 짧은 거리는 꽤 저렴해요.</li>
-    <li><b>비 오는 날</b> — 센트럴은 건물끼리 연결된 육교가 촘촘해서 우산 없이도 꽤 다닐 수 있어요.</li>
+    <li><b>MTR 환승</b> — 셩완에서 구룡으로 갈 땐 센트럴역에서 갈아타요. 같은 역 안이라 개찰구를 안 나가도 됩니다.</li>
+    <li><b>트램</b> — 뒤로 타서 앞으로 내리며 요금을 내요. 거리 상관없이 HK$3, 2층 맨 앞자리가 명당.</li>
+    <li><b>스타페리</b> — 침사추이~센트럴 8분에 HK$5인데 야경 명소나 다름없어요.</li>
+    <li><b>피크트램</b> — 온라인 예매로 줄을 줄이세요. 오전이 덜 붐빕니다.</li>
+    <li><b>비 오는 날</b> — 센트럴은 건물끼리 육교가 촘촘해서 우산 없이도 꽤 다닐 수 있어요.</li>
   </ul>
 </div>
 
